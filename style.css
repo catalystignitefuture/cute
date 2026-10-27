@@ -1,0 +1,545 @@
+/* =========================================
+   CUTE SURPRISE WEBSITE
+   STYLE SHEET
+   ========================================= */
+
+/* ---------- Basic reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #fff7f5;
+    color: #4d4350;
+}
+
+/* ---------- Screen layout ---------- */
+
+.screen {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 25px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.98);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease,
+        visibility 0.6s ease;
+
+    overflow-y: auto;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+/* ---------- Opening screen ---------- */
+
+#opening-screen {
+    background:
+        radial-gradient(circle at top left, #f9dce8, transparent 35%),
+        radial-gradient(circle at bottom right, #ddd5f5, transparent 35%),
+        #fff8ef;
+}
+
+.opening-content {
+    width: 100%;
+    max-width: 500px;
+}
+
+.gift {
+    font-size: 85px;
+    margin-bottom: 20px;
+    animation: giftBounce 2s ease-in-out infinite;
+}
+
+.tiny-label {
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #a47792;
+    margin-bottom: 12px;
+}
+
+h1,
+h2 {
+    color: #554657;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 7vw, 3rem);
+    margin-bottom: 14px;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: #887b87;
+    margin-bottom: 28px;
+}
+
+/* ---------- Buttons ---------- */
+
+.main-button {
+    border: none;
+    border-radius: 50px;
+    padding: 14px 25px;
+    background: linear-gradient(135deg, #d99bb8, #a99bd5);
+    color: white;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(145, 116, 150, 0.2);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.main-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(145, 116, 150, 0.28);
+}
+
+.main-button:active {
+    transform: scale(0.95);
+}
+
+/* ---------- Messages screen ---------- */
+
+#messages-screen {
+    background:
+        radial-gradient(circle at 20% 20%, #f3d9e6, transparent 35%),
+        radial-gradient(circle at 80% 80%, #ddd8f4, transparent 35%),
+        #fffaf4;
+}
+
+.messages-content {
+    width: 100%;
+    max-width: 550px;
+}
+
+.little-flower {
+    font-size: 45px;
+    margin-bottom: 25px;
+    animation: gentleFloat 3s ease-in-out infinite;
+}
+
+.typewriter {
+    min-height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-size: clamp(1.2rem, 5vw, 1.7rem);
+    font-weight: 500;
+    line-height: 1.6;
+    color: #625263;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ---------- Facts screen ---------- */
+
+#facts-screen {
+    background:
+        radial-gradient(circle at top right, #e3ddf7, transparent 35%),
+        radial-gradient(circle at bottom left, #f7dce8, transparent 35%),
+        #fffaf5;
+}
+
+.facts-content {
+    width: 100%;
+    max-width: 650px;
+    padding: 10px 0;
+}
+
+.facts-content h2 {
+    font-size: clamp(1.6rem, 6vw, 2.3rem);
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #887b87;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+/* ---------- Fact cards ---------- */
+
+.cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.fact-card {
+    position: relative;
+    border: 2px solid rgba(190, 163, 191, 0.25);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 17px;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(100, 75, 100, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.fact-card:hover {
+    transform: translateY(-3px);
+}
+
+.fact-card:active {
+    transform: scale(0.98);
+}
+
+.fact-card.revealed {
+    background: #fff1f6;
+    box-shadow: 0 10px 25px rgba(180, 130, 160, 0.12);
+}
+
+.card-icon {
+    font-size: 25px;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.card-title {
+    font-weight: 600;
+    color: #5a4b59;
+    vertical-align: middle;
+}
+
+.card-hidden {
+    display: none;
+    margin-top: 10px;
+    padding-left: 5px;
+    color: #786b77;
+    font-size: 0.87rem;
+    line-height: 1.5;
+}
+
+.fact-card.revealed .card-hidden {
+    display: block;
+    animation: fadeUp 0.35s ease;
+}
+
+.tap-hint {
+    display: block;
+    margin-top: 6px;
+    color: #b18aa5;
+    font-size: 0.7rem;
+}
+
+.fact-card.revealed .tap-hint {
+    display: none;
+}
+
+/* ---------- Question screen ---------- */
+
+#question-screen {
+    background:
+        radial-gradient(circle at top left, #eadff6, transparent 35%),
+        radial-gradient(circle at bottom right, #f8dce8, transparent 35%),
+        #fffaf3;
+}
+
+.question-content {
+    width: 100%;
+    max-width: 500px;
+}
+
+.question-icon {
+    font-size: 55px;
+    margin-bottom: 18px;
+    animation: gentleFloat 3s ease-in-out infinite;
+}
+
+.question-content h2 {
+    font-size: clamp(1.7rem, 7vw, 2.5rem);
+    margin-bottom: 15px;
+}
+
+.question-content p {
+    color: #817581;
+    line-height: 1.6;
+}
+
+.answer-buttons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    min-height: 100px;
+}
+
+.answer-button {
+    border: none;
+    border-radius: 50px;
+    padding: 13px 24px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+
+.yes-button {
+    background: #d9b7d5;
+    color: #fff;
+}
+
+.no-button {
+    background: #eee5ed;
+    color: #6f6370;
+}
+
+.question-message {
+    min-height: 45px;
+    margin-top: 18px;
+    font-size: 0.9rem;
+    color: #a06f91 !important;
+}
+
+/* ---------- Final screen ---------- */
+
+#final-screen {
+    background:
+        radial-gradient(circle at top left, #f5d9e7, transparent 35%),
+        radial-gradient(circle at bottom right, #ddd7f4, transparent 35%),
+        #fffaf2;
+}
+
+.final-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 550px;
+}
+
+.final-sparkle {
+    font-size: 65px;
+    margin-bottom: 20px;
+    animation: sparklePulse 1.5s ease-in-out infinite;
+}
+
+.final-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+}
+
+.final-message {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    font-weight: 500;
+    line-height: 1.6;
+    color: #625263;
+}
+
+.final-small-message {
+    margin-top: 15px;
+    margin-bottom: 28px;
+    font-size: 0.9rem;
+}
+
+/* ---------- Floating sparkles ---------- */
+
+.floating-sparkles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.floating-sparkles span {
+    position: absolute;
+    color: #c9acd0;
+    opacity: 0.45;
+    font-size: 18px;
+    animation: floatAround 7s ease-in-out infinite;
+}
+
+.floating-sparkles span:nth-child(1) {
+    left: 8%;
+    top: 15%;
+    animation-delay: 0s;
+}
+
+.floating-sparkles span:nth-child(2) {
+    left: 85%;
+    top: 20%;
+    animation-delay: 1s;
+}
+
+.floating-sparkles span:nth-child(3) {
+    left: 15%;
+    top: 75%;
+    animation-delay: 2s;
+}
+
+.floating-sparkles span:nth-child(4) {
+    left: 80%;
+    top: 70%;
+    animation-delay: 3s;
+}
+
+.floating-sparkles span:nth-child(5) {
+    left: 50%;
+    top: 10%;
+    animation-delay: 1.5s;
+}
+
+.floating-sparkles span:nth-child(6) {
+    left: 55%;
+    top: 85%;
+    animation-delay: 2.5s;
+}
+
+/* ---------- Tap sparkle ---------- */
+
+.tap-sparkle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+    font-size: 18px;
+    animation: tapSparkle 0.7s ease-out forwards;
+}
+
+/* ---------- Confetti ---------- */
+
+.confetti-piece {
+    position: fixed;
+    top: -20px;
+    width: 8px;
+    height: 14px;
+    z-index: 1;
+    animation: confettiFall 3s linear forwards;
+}
+
+/* ---------- Animations ---------- */
+
+@keyframes giftBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(3deg);
+    }
+}
+
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sparklePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+@keyframes floatAround {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(15deg);
+    }
+}
+
+@keyframes tapSparkle {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -100px) scale(1.5);
+    }
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* ---------- Larger screens ---------- */
+
+@media (min-width: 600px) {
+
+    .screen {
+        padding: 40px;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fact-card:last-child {
+        grid-column: 1 / -1;
+        width: 50%;
+        justify-self: center;
+    }
+}

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic page settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser tab title -->
+    <title>A Tiny Surprise ✨</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Our CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating sparkles will appear around the page -->
+    <div class="floating-sparkles" aria-hidden="true">
+        <span>✦</span>
+        <span>✧</span>
+        <span>✨</span>
+        <span>✦</span>
+        <span>✿</span>
+        <span>✧</span>
+    </div>
+
+    <!-- =========================================
+         SCREEN 1 — OPENING
+         ========================================= -->
+    <section id="opening-screen" class="screen active">
+
+        <div class="opening-content">
+
+            <!-- Cute gift -->
+            <div class="gift" aria-hidden="true">
+                🎁
+            </div>
+
+            <p class="tiny-label">A very important announcement...</p>
+
+            <h1>
+                Psst... I made something for you 🤭
+            </h1>
+
+            <p class="subtitle">
+                Don't worry. It's not homework.
+            </p>
+
+            <button id="open-button" class="main-button">
+                Tap to open ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         SCREEN 2 — TYPEWRITER MESSAGES
+         ========================================= -->
+    <section id="messages-screen" class="screen">
+
+        <div class="messages-content">
+
+            <div class="little-flower">🌸</div>
+
+            <!-- JavaScript will type messages here -->
+            <div id="typewriter-text" class="typewriter"></div>
+
+            <!-- Continue button -->
+            <button id="continue-button" class="main-button hidden">
+                Okay, there's more... 👀
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         SCREEN 3 — CUTENESS FACTS
+         ========================================= -->
+    <section id="facts-screen" class="screen">
+
+        <div class="facts-content">
+
+            <p class="tiny-label">Officially unofficial research 📋</p>
+
+            <h2>
+                The Extremely Serious<br>
+                Cuteness Report
+            </h2>
+
+            <p class="section-subtitle">
+                Tap each card. The scientists have spoken.
+            </p>
+
+            <!-- Fact cards -->
+            <div class="cards-container">
+
+                <button class="fact-card">
+                    <span class="card-icon">🔬</span>
+                    <span class="card-title">Scientific Evidence</span>
+                    <span class="card-hidden">
+                        Studies show that your smile has suspiciously high levels of adorable.
+                    </span>
+                    <span class="tap-hint">Tap me ✨</span>
+                </button>
+
+                <button class="fact-card">
+                    <span class="card-icon">📊</span>
+                    <span class="card-title">Daily Statistics</span>
+                    <span class="card-hidden">
+                        Cuteness levels remain dangerously above average. No further testing required.
+                    </span>
+                    <span class="tap-hint">Tap me ✨</span>
+                </button>
+
+                <button class="fact-card">
+                    <span class="card-icon">🏆</span>
+                    <span class="card-title">Achievement Unlocked</span>
+                    <span class="card-hidden">
+                        Somehow became one of the cutest people around. Very impressive.
+                    </span>
+                    <span class="tap-hint">Tap me ✨</span>
+                </button>
+
+                <button class="fact-card">
+                    <span class="card-icon">📝</span>
+                    <span class="card-title">Official Report</span>
+                    <span class="card-hidden">
+                        Adorable. Slightly chaotic. Excellent smile. Overall rating: 10/10.
+                    </span>
+                    <span class="tap-hint">Tap me ✨</span>
+                </button>
+
+                <button class="fact-card">
+                    <span class="card-icon">🌸</span>
+                    <span class="card-title">Final Finding</span>
+                    <span class="card-hidden">
+                        The evidence is overwhelming. You are, in fact, ridiculously cute.
+                    </span>
+                    <span class="tap-hint">Tap me ✨</span>
+                </button>
+
+            </div>
+
+            <button id="facts-continue-button" class="main-button">
+                I have reviewed the evidence 😌
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         SCREEN 4 — PLAYFUL QUESTION
+         ========================================= -->
+    <section id="question-screen" class="screen">
+
+        <div class="question-content">
+
+            <div class="question-icon">🧐</div>
+
+            <h2>
+                Do you know how cute you are?
+            </h2>
+
+            <p>
+                Please answer carefully.<br>
+                This is extremely serious business.
+            </p>
+
+            <div class="answer-buttons">
+
+                <button id="yes-button" class="answer-button yes-button">
+                    Yes 😌
+                </button>
+
+                <button id="no-button" class="answer-button no-button">
+                    No 🥺
+                </button>
+
+            </div>
+
+            <!-- JavaScript will show this message -->
+            <p id="question-message" class="question-message"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         SCREEN 5 — FINAL SCREEN
+         ========================================= -->
+    <section id="final-screen" class="screen">
+
+        <!-- Confetti will be created by JavaScript -->
+        <div id="confetti-container" aria-hidden="true"></div>
+
+        <div class="final-content">
+
+            <div class="final-sparkle">✨</div>
+
+            <h2>
+                Official conclusion:
+            </h2>
+
+            <p class="final-message">
+                Just a reminder that you're awesome<br>
+                and ridiculously adorable. 😊
+            </p>
+
+            <p class="final-small-message">
+                Have a wonderfully nice day! 🌸
+            </p>
+
+            <button id="replay-button" class="main-button">
+                Replay ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Small tap sparkle effect -->
+    <div id="tap-sparkle-container" aria-hidden="true"></div>
+
+
+    <!-- Our JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
